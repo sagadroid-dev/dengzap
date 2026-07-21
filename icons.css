@@ -15,7 +15,8 @@
 .erase-icon,
 .chat_search-icon,
 .chat_menu-icon,
-.plus-icon
+.plus-icon,
+.mic-icon
 {
     justify-content: center;
     background-color: #222225;
@@ -83,5 +84,9 @@ background-image: url(images/icons/menu-icon.png)
 }
 
 .plus-icon {
-    background-image: url(images/);
+    background-image: url(images/icons/plus-icon.png);
+}
+
+.mic-icon {
+    background-image: url(images/icons/mic-icon.png);
 }

@@ -25,6 +25,25 @@
     flex: 2;
 }
 
+
 .text-content {
-    flex: 0.3;
+   background-color: blue;
+   display: flex;
 }
+
+.text-message {
+    background-color: aqua;
+    flex: 1;
+    padding: 0.2rem;
+}
+
+.text-input {
+    background-color: #ececec;
+    
+    border-radius: 28px;
+    display: flex;
+    
+    width: 100%;
+    height: 80%;
+}
+

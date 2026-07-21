@@ -55,13 +55,18 @@
                         <div class="chat_menu-icon"></div>
                     </div>
                 </div>
-                <div class="chat-content">Chat Content</div>
+                <div class="chat-content" id="chatMessages"></div>
                 <div class="text-content"> 
                     <div class="plus-icon"></div>
                         <div class="text-message">
-                        <input type="text" class="text-input">
+                        <input
+    type="text"
+    class="text-input"
+    id="messageInput"
+    placeholder="Digite uma mensagem..."
+>
                         </div>
-                    <div class="mic-icon"></div>
+                    <button id="sendButton" class="mic-icon"></button>
                 </div>
             </main>
             <div class="chat-info">
@@ -146,6 +151,6 @@
         </div>
         <footer>Footer</footer>
     </div>
-    
+    <script type="module" src="chat.js"></script>
 </body>
 </html>

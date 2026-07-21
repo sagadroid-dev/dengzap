@@ -1,0 +1,87 @@
+.message-icon,
+.phone-icon,
+#nav_phone-icon,
+.status-icon,
+.search-icon,
+#aside_search-icon,
+.call_phone-icon,
+.call_video-icon,
+.call_search-icon,
+.star-icon,
+.bell-icon,
+.heart-icon,
+.block-icon,
+.clean-icon,
+.erase-icon,
+.chat_search-icon,
+.chat_menu-icon,
+.plus-icon
+{
+    justify-content: center;
+    background-color: #222225;
+    border-radius: 50%;
+    height: 1.4rem;
+    width: 1.4rem;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0.25rem;
+    margin: 0.4rem;
+}
+
+.message-icon {
+    background-image: url(images/icons/message-icon.png);
+}
+.phone-icon {
+    background-image: url(images/icons/phone-icon.png);
+}
+#nav_phone-icon {
+    background-image: url(images/icons/phone-icon.png);
+}
+.status-icon {
+    background-image: url(images/icons/status-icon.png);
+}
+.search-icon {
+    background-image: url(images/icons/search-icon.png);
+}
+#aside_search-icon {
+    background-image: url(images/icons/search-icon.png);
+}
+.call_phone-icon {
+    background-image: url(images/icons/phone-icon.png);
+}
+.call_video-icon {
+    background-image: url(images/icons/videocall-icon.png);
+}
+.call_search-icon {
+    background-image: url(images/icons/search-icon.png);
+}
+.star-icon {
+    background-image: url(images/icons/star-icon.png);
+}
+.bell-icon {
+    background-image: url(images/icons/bell-icon.png);
+}
+.heart-icon {
+    background-image: url(images/icons/heart-icon.png);
+}
+.block-icon {
+    background-image: url(images/icons/block-icon.png);
+}
+.clean-icon {
+    background-image: url(images/icons/clean-icon.png);
+}
+.erase-icon {
+    background-image: url(images/icons/erase-icon.png);
+}
+
+.chat_search-icon {
+background-image: url(images/icons/search-icon.png);
+}
+.chat_menu-icon {
+background-image: url(images/icons/menu-icon.png)
+}
+
+.plus-icon {
+    background-image: url(images/);
+}

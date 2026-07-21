@@ -1,0 +1,29 @@
+.row-container {
+    border: 2px solid white;
+    display: flex;
+    height: 94dvh; 
+}
+
+.navbar, .sidebar, .main-content {
+    border: 2px solid white;
+    
+}
+
+.navbar {
+    background-color: #F7F5F3;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #fff;
+}
+
+.main-content {
+    flex: 3;
+    background-color: #F5F1EB;
+}
+
+.chat-info {
+    background-color: #fff;
+    flex: 1;
+}

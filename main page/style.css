@@ -11,7 +11,17 @@ body, html {
     font-family: "Arimo";
 }
 
+
+.navbar,
+header,
+footer 
+
+{
+background-color: #fff8f8;
+}
+
+
 .container {
-    height: 100dvh;
+    
     
 }

@@ -10,7 +10,9 @@ body {
 
 .profile-image {
     justify-self: center;
-    background-image: url(images/imgs/profile-image.jpg);
+    background-image: url(images/images/lin00b.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
      flex-shrink: 0;
     height: 8rem;
     width: 8rem;
@@ -24,6 +26,8 @@ body {
     display: flex;
     align-items: baseline;
 }
+
+
 
 
 

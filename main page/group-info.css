@@ -1,6 +1,6 @@
 
 
-.chat-info {
+.chat-info_group {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -10,7 +10,7 @@
     
 }
 
-.chat-info > * {
+.chat-info_group > * {
     margin: 0.6rem;
 }
 
@@ -30,7 +30,7 @@
     
 }
 
-.contact-info_image {
+.group-info_image {
     justify-self: center;
     background-image: url(images/img/profile-image.jpg);
      flex-shrink: 0;

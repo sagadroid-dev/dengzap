@@ -1,3 +1,10 @@
+import { checkAuth } from "../../services/auth.js";
+
+const user = await checkAuth();
+
+if (!user) {
+    window.location.href = "../login/index.html";
+}
 import { db } from "./firebase.js";
 
 import {

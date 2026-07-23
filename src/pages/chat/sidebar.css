@@ -1,3 +1,7 @@
+
+
+
+
 .sidebar {
     background-color: white;
     display: flex;
@@ -9,9 +13,11 @@
 
 
 
-.sidebar-header {
-
+.sidebar-header p {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
 }
+
 
 .sidebar-search {
     background-color: #ececec;
@@ -19,9 +25,11 @@
     padding: 0.1rem;
     border-radius: 28px;
     display: flex;
+    margin-bottom: 0.6rem;
 }
 
 .searchbar {
+    font-size: 1rem;
     border: none;               /* Remove a borda padrão do HTML */
     background: transparent;    /* Remove o fundo branco padrão do input */
     outline: none;             /* Remove aquela linha preta/azul ao clicar */
@@ -41,10 +49,14 @@ flex: 1;
 .message-container {
 display: flex;
 flex-direction: row;
-background-color: #ececec;
     padding: 0.5rem;
     margin: 0.4rem 0.2rem;
     border-radius: 12px;
+    gap: 0.3rem;
+}
+
+.message-container:hover {
+    background-color: #ececec;
 }
 
 .message-container_picture {
@@ -57,12 +69,20 @@ background-color: #ececec;
 }
 
 .message-container_messages {
+display: flex;
+flex-direction: column;
 flex: 1;
-align-items: center;
+gap: 0.1rem;
+
 }
 
 .message-container_name {
+    font-size: 1.1rem;
+    color: black;
+}
 
+.message-container_text, .message-container-timestamp {
+    color: #7c7c7c;
 }
 
 

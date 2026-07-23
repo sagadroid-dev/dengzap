@@ -1,4 +1,6 @@
-.chat-info {
+
+
+.chat-info_group {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -8,11 +10,27 @@
     
 }
 
+.chat-info_group > * {
+    margin: 0.6rem;
+}
+
+.groups, .options, .external-options {
+
+}
+
+.group-item, .option-item, .external-options-item {
+    margin: 0.4rem 0;
+    padding: 0.3rem 1rem;
+    border-radius: 12px;
+}
+
+
+
 .contact-info {
     
 }
 
-.contact-info_image {
+.group-info_image {
     justify-self: center;
     background-image: url(images/img/profile-image.jpg);
      flex-shrink: 0;
@@ -20,16 +38,29 @@
     width: 8rem;
     background-size: 100% 100%;
     border-radius: 50%;
+     margin: 0.6rem;
+    
+}
+
+.contact-info_name {
+    font-size: 1.3rem;
+}
+
+.status-title, .contact-info_number {
+    color: #7c7c7c;
 }
 
 .call {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 0.3rem;
 }
 
-.call-item-voice, .call-item-video, .call-item-search {
-    margin: 0.8rem 0.4rem;
+.call-item-voice,
+.call-item-video,
+.call-item-search {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,9 +70,20 @@
     border-radius: 2rem;
 }
 
-.status {
-    margin: 0.7rem;
+.call-item-voice:hover,
+.call-item-video:hover,
+.call-item-search:hover,
+.option-item:hover,
+.groups:hover
+ {
+    background-color: #e0e0e0;
 }
+
+.status {
+    
+}
+
+
 
 .sent-media {
     display: flex;
@@ -59,6 +101,8 @@
 
 .media-image {
     background-image: url(images/img/profile-image.jpg);
+    border-radius: 8px;
+    margin: 0.16rem;
     width: 4rem;
     height: 4rem;
     background-size: 100% 100%;
@@ -70,28 +114,21 @@
     flex-direction: column;
 }
 
-.option-item {
-    background-color: #ececec;
-    padding: 1rem;
-    margin: 0.2rem;
-    border-radius: 12px;
-}
+
 
 
 .groups {
  display: flex;
  flex-direction: column;
-  background-color: #ececec;
-    padding: 0.5rem;
-    margin: 0.2rem;
-    border-radius: 12px;
- 
+ border-radius: 12px;
 }
+
 
 .group-item {
     
     display: flex;
     gap: 0.5rem;
+    
     
 }
 
@@ -101,8 +138,6 @@
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    gap: 0.1rem;
-    
     
 }
 
@@ -117,23 +152,33 @@
     flex-shrink: 0;
 }
 
-.external-options {
-
-}
 
 .external-options-item {
 
     background-color: #FDE5EB;
-    padding: 1rem;
-    margin: 0.2rem;
-    border-radius: 12px;
+    
     color: #B90733;
+}
+
+.external-options-item:hover {
+    background-color: #ffd9e3;
 }
 
 .external-options-item, .option-item {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 0.4rem;
+    justify-content: start;
+    padding: 0;
+    
+    
 }
+
+.option-item p, .external-options-item p {
+    flex: 1;
+   text-align: start;
+    
+}
+
+
 

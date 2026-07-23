@@ -1,0 +1,25 @@
+.row-container {
+    
+    display: flex;
+    height: 94dvh; 
+}
+
+
+    
+
+
+
+.sidebar {
+    flex: 1;
+    background-color: #fff;
+}
+
+.main-content {
+    flex: 3;
+    background-color: #F5F1EB;
+}
+
+.chat-info {
+    background-color: #fff;
+    flex: 1;
+}

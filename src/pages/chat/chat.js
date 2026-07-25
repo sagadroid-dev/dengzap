@@ -1,164 +1,150 @@
 import { checkAuth } from "../../services/auth.js";
 
-const user = await checkAuth();
+import { loadUsers } from "./users.js";
 
-if (!user) {
-    window.location.href = "../login/index.html";
-}
-import { db } from "./firebase.js";
+import { getOrCreateConversation } from "./conversations.js";
 
 import {
-    collection,
-    addDoc,
-    query,
-    orderBy,
-    onSnapshot,
-    serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+    listenMessages,
+    sendMessage
+} from "./messages.js";
 
+let currentConversation = null;
+let stopListening = null;
 
-// ============================
-// SALA
-// ============================
+// =====================================
+// AUTENTICAÇÃO
+// =====================================
 
-const params = new URLSearchParams(window.location.search);
+const currentUser = await checkAuth();
 
-const room =
-    params.get("room") || "geral";
+if (!currentUser) {
 
+    window.location.href = "../login/index.html";
 
-localStorage.removeItem("nickname");
+    throw new Error("Usuário não autenticado.");
 
-let nickname = prompt("Digite seu nome:");
-
-if (!nickname || nickname.trim() === "") {
-    nickname = "Anônimo";
 }
 
-localStorage.setItem("nickname", nickname);
-
-
-// ============================
+// =====================================
 // ELEMENTOS
-// ============================
+// =====================================
 
-const chat =
-    document.getElementById("chatMessages");
+const chatName = document.getElementById("chatName");
+const chatStatus = document.getElementById("chatStatus");
 
-const input =
-    document.getElementById("messageInput");
+const input = document.getElementById("messageInput");
+const button = document.getElementById("sendButton");
 
-const send =
-    document.getElementById("sendButton");
+// =====================================
+// CARREGA USUÁRIOS
+// =====================================
 
-
-// ============================
-// FIRESTORE
-// ============================
-
-const messagesRef = collection(
-    db,
-    "rooms",
-    room,
-    "messages"
+await loadUsers(
+    currentUser,
+    openConversation
 );
 
+// =====================================
+// ABRIR CONVERSA
+// =====================================
 
-// ============================
-// ENVIAR
-// ============================
+async function openConversation(user) {
 
-async function sendMessage() {
+    try {
+
+        chatName.textContent = user.name;
+        chatStatus.textContent = user.status ?? "";
+
+        currentConversation =
+            await getOrCreateConversation(
+                currentUser,
+                user
+            );
+
+        console.log("Conversa:", currentConversation);
+
+        if (stopListening) {
+
+            stopListening();
+
+        }
+
+        stopListening = listenMessages(
+            currentConversation,
+            currentUser
+        );
+
+        input.focus();
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Erro ao abrir conversa.");
+
+    }
+
+}
+
+// =====================================
+// ENVIAR MENSAGEM
+// =====================================
+
+async function handleSendMessage() {
+
+    if (!currentConversation) {
+
+        alert("Selecione uma conversa.");
+
+        return;
+
+    }
 
     const text = input.value.trim();
 
     if (text === "")
         return;
 
-    await addDoc(messagesRef, {
+    try {
 
-        author: nickname,
+        await sendMessage(
 
-        text,
+            currentConversation,
 
-        createdAt: serverTimestamp()
+            currentUser,
 
-    });
+            text
 
-    input.value = "";
+        );
+
+        input.value = "";
+
+        input.focus();
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Erro ao enviar mensagem.");
+
+    }
 
 }
 
-send.onclick = sendMessage;
-
-input.addEventListener("keydown", (e) => {
-
-    if (e.key === "Enter")
-        sendMessage();
-
-});
-
-
-// ============================
-// RECEBER
-// ============================
-
-const q = query(
-    messagesRef,
-    orderBy("createdAt")
+button.addEventListener(
+    "click",
+    handleSendMessage
 );
 
-onSnapshot(q, (snapshot) => {
+input.addEventListener("keydown", (event) => {
 
-    chat.innerHTML = "";
+    if (event.key === "Enter") {
 
-   snapshot.forEach((doc) => {
+        event.preventDefault();
 
-    const msg = doc.data();
-
-    const div = document.createElement("div");
-
-    div.classList.add("message");
-
-    if (msg.author === nickname) {
-        div.classList.add("sent");
-    } else {
-        div.classList.add("received");
-    }
-
-    let hour = "";
-
-    if (msg.createdAt) {
-
-        const date = msg.createdAt.toDate();
-
-        hour = date.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit"
-        });
+        handleSendMessage();
 
     }
-
-    div.innerHTML = `
-        <div class="message-author">
-            ${msg.author}
-        </div>
-
-        <div class="message-text">
-            ${msg.text}
-        </div>
-
-        <div class="message-time">
-            ${hour}
-        </div>
-    `;
-
-    chat.appendChild(div);
-
-});
-
-    chat.scrollTop =
-        chat.scrollHeight;
-        console.log("Chat carregado!");
 
 });

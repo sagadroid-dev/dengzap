@@ -53,3 +53,17 @@ export function checkLogin(callback) {
 
     onAuthStateChanged(auth, callback);
 }
+
+export function checkAuth() {
+
+    return new Promise((resolve) => {
+
+        onAuthStateChanged(auth, (user) => {
+
+            resolve(user);
+
+        });
+
+    });
+
+}

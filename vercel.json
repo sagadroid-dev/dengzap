@@ -3,7 +3,11 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/src/$1"
+    },
+    {
+      "source": "/",
+      "destination": "/src"
     }
   ]
 }

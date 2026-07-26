@@ -1,0 +1,184 @@
+
+
+.chat-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    max-width: 20%; /*Define a largura máxima do painel*/
+    overflow: auto;
+    
+}
+
+.chat-info > * {
+    margin: 0.6rem;
+}
+
+.groups, .options, .external-options {
+
+}
+
+.group-item, .option-item, .external-options-item {
+    margin: 0.4rem 0;
+    padding: 0.3rem 1rem;
+    border-radius: 12px;
+}
+
+
+
+.contact-info {
+    
+}
+
+.contact-info_image {
+    justify-self: center;
+    background-image: url(images/img/profile-image.jpg);
+     flex-shrink: 0;
+    height: 8rem;
+    width: 8rem;
+    background-size: 100% 100%;
+    border-radius: 50%;
+     margin: 0.6rem;
+    
+}
+
+.contact-info_name {
+    font-size: 1.3rem;
+}
+
+.status-title, .contact-info_number {
+    color: #7c7c7c;
+}
+
+.call {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.call-item-voice,
+.call-item-video,
+.call-item-search {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ececec;
+    width: 4rem;
+    height: 3rem;
+    border-radius: 2rem;
+}
+
+.call-item-voice:hover,
+.call-item-video:hover,
+.call-item-search:hover,
+.option-item:hover,
+.groups:hover
+ {
+    background-color: #e0e0e0;
+}
+
+.status {
+    
+}
+
+
+
+.sent-media {
+    display: flex;
+    flex-direction: column;
+   
+    
+}
+
+.media-images {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* O scroll agora será ativado corretamente */
+    
+}
+
+.media-image {
+    background-image: url(images/img/profile-image.jpg);
+    border-radius: 8px;
+    margin: 0.16rem;
+    width: 4rem;
+    height: 4rem;
+    background-size: 100% 100%;
+    flex-shrink: 0; /* SEGREDO 2: Impede que as imagens fiquem esmagadas */
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.groups {
+ display: flex;
+ flex-direction: column;
+ border-radius: 12px;
+}
+
+
+.group-item {
+    
+    display: flex;
+    gap: 0.5rem;
+    
+    
+}
+
+.group-column {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    
+}
+
+
+.group-image {
+     justify-self: center;
+    background-image: url(images/img/profile-image.jpg);
+    height: 3rem;
+    width: 3rem;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+
+.external-options-item {
+
+    background-color: #FDE5EB;
+    
+    color: #B90733;
+}
+
+.external-options-item:hover {
+    background-color: #ffd9e3;
+}
+
+.external-options-item, .option-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding: 0;
+    
+    
+}
+
+.option-item p, .external-options-item p {
+    flex: 1;
+   text-align: start;
+    
+}
+
+
+

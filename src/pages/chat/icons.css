@@ -1,0 +1,110 @@
+.message-icon,
+.phone-icon,
+#nav_phone-icon,
+.status-icon,
+.search-icon,
+#aside_search-icon,
+.call_phone-icon,
+.call_video-icon,
+.call_search-icon,
+.star-icon,
+.bell-icon,
+.heart-icon,
+.block-icon,
+.clean-icon,
+.erase-icon,
+.chat_search-icon,
+.chat_menu-icon,
+.plus-icon,
+.mic-icon
+{
+    justify-content: center;
+    height: 1.9rem;
+    width: 1.9rem;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0.25rem;
+    margin: 0.4rem;
+}
+
+
+.message-icon:hover,
+.phone-icon:hover,
+#nav_phone-icon:hover,
+.status-icon:hover,
+.chat_search-icon:hover,
+.chat_menu-icon:hover,
+.plus-icon:hover,
+.mic-icon:hover
+{
+    justify-content: center;
+    background-color: #dfdfdf;
+    border-radius: 50%;
+    
+}
+
+
+
+
+.message-icon {
+    background-image: url(images/icons/message-icon.png);
+}
+.phone-icon {
+    background-image: url(images/icons/phone-icon.png);
+}
+#nav_phone-icon {
+    background-image: url(images/icons/phone-icon.png);
+}
+.status-icon {
+    background-image: url(images/icons/status-icon.png);
+}
+.search-icon {
+    background-image: url(images/icons/search-icon.png);
+}
+#aside_search-icon {
+    background-image: url(images/icons/search-icon.png);
+}
+.call_phone-icon {
+    background-image: url(images/icons/phone-icon.png);
+}
+.call_video-icon {
+    background-image: url(images/icons/videocall-icon.png);
+}
+.call_search-icon {
+    background-image: url(images/icons/search-icon.png);
+}
+.star-icon {
+    background-image: url(images/icons/star-icon.png);
+}
+.bell-icon {
+    background-image: url(images/icons/bell-icon.png);
+}
+.heart-icon {
+    background-image: url(images/icons/heart-icon.png);
+}
+.block-icon {
+    background-image: url(images/icons/block-icon.png);
+}
+.clean-icon {
+    background-image: url(images/icons/clean-icon.png);
+}
+.erase-icon {
+    background-image: url(images/icons/erase-icon.png);
+}
+
+.chat_search-icon {
+background-image: url(images/icons/search-icon.png);
+}
+.chat_menu-icon {
+background-image: url(images/icons/menu-icon.png)
+}
+
+.plus-icon {
+    background-image: url(images/icons/plus-icon.png);
+}
+
+.mic-icon {
+    background-image: url(images/icons/mic-icon.png);
+}
+

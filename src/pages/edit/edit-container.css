@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    min-height: 100vh;       /* Garante que o corpo use toda a altura da tela */
+    margin: 0;               /* Remove margens padrão do navegador */
+    background-color: #c3ffc1;
+
+}
+
+.profile-image {
+    justify-self: center;
+    background-image: url(images/images/lin00b.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+     flex-shrink: 0;
+    height: 8rem;
+    width: 8rem;
+    background-size: 100% 100%;
+    border-radius: 50%;
+     margin: 0.6rem;
+    
+}
+
+.image-row {
+    display: flex;
+    align-items: baseline;
+}
+
+
+
+
+
+.edit-container {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    height: 34rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 24px 8px #40774028;
+    background-color: #fafafa;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    
+}
+
+.edit-column {
+    text-align: center;
+    margin: 1rem;
+    padding: 0 4rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 24px 8px #40774028;
+    
+    
+}
+
+
+
+.submit-button {
+    background-image: linear-gradient(#96e494, #acf0aa, #96e494);
+    box-shadow:inset 0 0 9px 2px #96e494;
+    padding: 0.8rem 1.3rem;
+    margin-top: 2rem;
+    height: 3rem;
+    width: 12rem;
+    border-radius: 12rem;
+    font-size: 1.2rem;
+    border: 2px solid #427749;
+}
+
+.submit-button:hover {
+    background-image: linear-gradient(#61a75f, #78c575, #61a75f);
+    box-shadow:inset 0 0 9px 2px #61a75f;
+}
+
+.submit-button:active {
+    
+    height: 3.5rem;
+    width: 12.5rem;
+}
+
+.info {
+    padding: 0.2rem;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #bdbdbd;
+}
+
+.description {
+   
+   padding: 0 0.6rem;
+   
+    
+}

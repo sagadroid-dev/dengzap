@@ -1,0 +1,379 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    height:100dvh;
+
+    font-family:"Arimo",sans-serif;
+
+    background:
+        radial-gradient(circle at top right,#ffffff55,transparent 35%),
+        radial-gradient(circle at bottom left,#b8ffbf55,transparent 40%),
+        linear-gradient(180deg,#d7ffd5,#c3ffc1);
+
+    overflow:hidden;
+
+}
+
+
+/* ========================= */
+/* Estrutura                 */
+/* ========================= */
+
+.navbar,
+header,
+footer{
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,255,255,.55);
+
+}
+
+
+/* ========================= */
+/* Chat                      */
+/* ========================= */
+
+.chat-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.55rem;
+
+    padding:1.2rem;
+
+    overflow-y:auto;
+
+    scroll-behavior:smooth;
+
+    background:
+
+        radial-gradient(circle at top,#ffffff30,transparent 45%),
+
+        linear-gradient(180deg,#eef8ef,#e7f5e8);
+
+}
+
+
+/* Scroll */
+
+.chat-content::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.chat-content::-webkit-scrollbar-thumb{
+
+    border-radius:50px;
+
+    background:#b5d9b7;
+
+}
+
+.chat-content::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+/* ========================= */
+/* Mensagem                  */
+/* ========================= */
+
+.message{
+
+    display:flex;
+
+    width:100%;
+
+    animation-duration:.30s;
+
+    animation-fill-mode:both;
+
+    animation-timing-function:cubic-bezier(.18,.92,.25,1);
+
+}
+
+.message.sent{
+
+    justify-content:flex-end;
+
+    animation-name:sentMessage;
+
+}
+
+.message.received{
+
+    justify-content:flex-start;
+
+    animation-name:receivedMessage;
+
+}
+
+
+/* ========================= */
+/* Balão                     */
+/* ========================= */
+
+.message-bubble{
+
+    position:relative;
+
+    max-width:68%;
+
+    padding:.85rem 1rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.35rem;
+
+    border-radius:18px;
+
+    word-break:break-word;
+
+    transition:
+
+        transform .22s,
+
+        box-shadow .25s,
+
+        filter .25s;
+
+    transform-origin:bottom;
+
+    will-change:transform,opacity;
+
+}
+
+
+/* Recebida */
+
+.message.received .message-bubble{
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255,255,255,.95),
+
+            rgba(248,248,248,.94)
+
+        );
+
+    color:#2d2d2d;
+
+    border-top-left-radius:5px;
+
+    border:1px solid rgba(255,255,255,.65);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+
+        0 6px 18px rgba(0,0,0,.06),
+
+        inset 0 1px 0 rgba(255,255,255,.8);
+
+}
+
+
+/* Enviada */
+
+.message.sent .message-bubble{
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #dbffd7,
+
+            #cbf8c6
+
+        );
+
+    color:#222;
+
+    border-top-right-radius:5px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    box-shadow:
+
+        0 8px 20px rgba(70,180,90,.12),
+
+        inset 0 1px 0 rgba(255,255,255,.6);
+
+}
+
+
+/* Hover */
+
+.message-bubble:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+        0 12px 28px rgba(0,0,0,.10);
+
+}
+
+
+/* ========================= */
+/* Texto                     */
+/* ========================= */
+
+.message-text{
+
+    font-size:.96rem;
+
+    line-height:1.55;
+
+    letter-spacing:.15px;
+
+}
+
+
+/* ========================= */
+/* Horário                   */
+/* ========================= */
+
+.message-time{
+
+    align-self:flex-end;
+
+    font-size:.72rem;
+
+    opacity:.55;
+
+    user-select:none;
+
+}
+
+
+/* ========================= */
+/* Animações                 */
+/* ========================= */
+
+@keyframes sentMessage{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateX(34px)
+
+            translateY(4px)
+
+            scale(.94);
+
+        filter:
+
+            blur(8px);
+
+    }
+
+    70%{
+
+        opacity:1;
+
+        filter:blur(0);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateX(0)
+
+            translateY(0)
+
+            scale(1);
+
+        filter:none;
+
+    }
+
+}
+
+@keyframes receivedMessage{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateX(-34px)
+
+            translateY(4px)
+
+            scale(.94);
+
+        filter:
+
+            blur(8px);
+
+    }
+
+    70%{
+
+        opacity:1;
+
+        filter:blur(0);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateX(0)
+
+            translateY(0)
+
+            scale(1);
+
+        filter:none;
+
+    }
+
+}
+
+
+/* ========================= */
+/* Seleção                   */
+/* ========================= */
+
+::selection{
+
+    background:#76dd83;
+
+    color:#fff;
+
+}
